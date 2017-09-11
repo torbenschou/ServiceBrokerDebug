@@ -51,14 +51,11 @@
     <Compile Include="DMV\BrokerQueueMessages.ps1" />
     <Compile Include="DMV\BrokerQueueMonitors.ps1" />
     <Compile Include="DMV\BrokerQueueTasks.ps1" />
-    <Compile Include="Script.ps1" />
+    <Compile Include="BrokerRunAll.ps1" />
     <Compile Include="Trace\BrokerTrace.ps1" />
     <Compile Include="Trace\BrokerTrace_v2.ps1" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CV\BrokerQueueContracts.txt" />
-    <Content Include="CV\BrokerQueueContracts.zip" />
-    <Content Include="DMV\BrokerQueueConnections.zip" />
     <Content Include="Sql\CreateDatabase.sql" />
     <Content Include="Sql\Magna_BrokerTrace.sql" />
   </ItemGroup>

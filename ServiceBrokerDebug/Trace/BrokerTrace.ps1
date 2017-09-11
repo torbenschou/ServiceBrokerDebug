@@ -29,6 +29,8 @@
 
 #>
 
+Clear-Host
+
 Function StartTrace ([string] $Instance, [int] $time, [string] $Filename, [string] $InputFile)
 {
   #Parameter
