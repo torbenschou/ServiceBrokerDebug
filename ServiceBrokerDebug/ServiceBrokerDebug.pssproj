@@ -29,6 +29,7 @@
     <Folder Include="Counters\" />
     <Folder Include="CV\" />
     <Folder Include="DMV\" />
+    <Folder Include="Sql\" />
     <Folder Include="Trace\" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +59,8 @@
     <Content Include="CV\BrokerQueueContracts.txt" />
     <Content Include="CV\BrokerQueueContracts.zip" />
     <Content Include="DMV\BrokerQueueConnections.zip" />
+    <Content Include="Sql\CreateDatabase.sql" />
+    <Content Include="Sql\Magna_BrokerTrace.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
