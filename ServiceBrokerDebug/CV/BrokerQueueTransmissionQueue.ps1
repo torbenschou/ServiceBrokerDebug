@@ -2,8 +2,8 @@
 (
   [string] $SourceDB 
   , [string] $SourceInstance 
-  , [string] $TargetDB
-  , [string] $targetInstance
+  , [string] $RepositoryDatabase
+  , [string] $RepositoryInstance
   , [int] $SamplingTime
 )
 
@@ -116,10 +116,10 @@ Function GetBrokerQueueData([string]$SourceInstance, [string]$SourceDB)
 #endregion GetBrokerQueueData
 
 #region WriteBrokerQueueData
-function WriteBrokerQueueData([string]$TargetInstance, [string]$TargetDB, $dataTable)
+function WriteBrokerQueueData([string]$RepositoryInstance, [string]$RepositoryDatabase, $dataTable)
 {
     $conTarget = New-Object System.Data.SqlClient.SqlConnection
-    $conTarget.ConnectionString = "Data Source=$TargetInstance;Initial Catalog=$TargetDB;Integrated Security=True;";
+    $conTarget.ConnectionString = "Data Source=$RepositoryInstance;Initial Catalog=$RepositoryDatabase;Integrated Security=True;";
 
     try
     {
@@ -170,7 +170,7 @@ while ($true)
 
   $data = GetBrokerQueueData $SourceInstance $SourceDB
 
-  WriteBrokerQueueData $TargetInstance $TargetDB $data
+  WriteBrokerQueueData $RepositoryInstance $RepositoryDatabase $data
 
   
   if ($Global:SamplingTime -gt 1) { sleep-until -s $Global:SamplingTime }
