@@ -53,7 +53,6 @@
     <Compile Include="DMV\BrokerQueueTasks.ps1" />
     <Compile Include="BrokerRunAll.ps1" />
     <Compile Include="Trace\BrokerTrace.ps1" />
-    <Compile Include="Trace\BrokerTrace_v2.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Sql\CreateDatabase.sql" />
