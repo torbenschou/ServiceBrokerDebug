@@ -52,6 +52,7 @@
     <Compile Include="DMV\BrokerQueueMonitors.ps1" />
     <Compile Include="DMV\BrokerQueueTasks.ps1" />
     <Compile Include="BrokerRunAll.ps1" />
+    <Compile Include="RunTest.ps1" />
     <Compile Include="Trace\BrokerTrace.ps1" />
   </ItemGroup>
   <ItemGroup>

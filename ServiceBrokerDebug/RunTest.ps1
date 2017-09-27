@@ -1,46 +1,19 @@
-﻿Param(
-	$WorkDir,
-	$SamplingTime,
-	$SourceHost,
-	$SourceInstance,
-	$SourceDatabase,
-	$RepositoryInstance,
-	$RepositoryDatabase,
-    [string] $TraceFilename,  # Full path C:\data\trace.trc
-    [string] $TraceInputFile = "sql\Magna_BrokerTrace.sql"
-)
 
+Clear-host
 
-
-<#
-  .SYNOPSIS
-      A powershell script to sample Service Broker related trace data 
-      
-
-  .DESCRIPTION
-
-
-
-  .NOTES
-      Auther: SolidQ Nordic
-              
-              Torben Schou (tschou@solidq.com)
-              
-
-  .SAMPLE
-  .\BrokerTrace.ps1 -SourceHost "." -TraceInputFile "C:\temp\myTrace.sql" -TraceFilename "C:\Temp\resultTrace.trc" -SamplingTime (minuttes)
-  .\BrokerRunAll.ps1 -SamplingTime 15 -SourceHost "Magna01" -SourceInstance "Magno01\SQL01" -SourceDatabase "BrokerEnabled" -RepositoryInstance "Magna03\Repository" -RepositoryDatabase "SolidQ_ServiceBroker" -TraceFilename "E:\data\myTrace.trc" -$TraceInputFile ".\ServiceBrokerDebug\Sql\Magna_BrokerTrace.sql"
-
-
-#>
-
-$Global:debug = $false
-
-Clear-Host
-
-Set-ExecutionPolicy Unrestricted -Force
-
-
+    #region Parameters
+    $WorkDir = "F:\BrokerRunAll"
+    $SourceHost = "SQLServer-1"
+    $SourceInstance = "SQLServer-1"
+    $SourceDatabase = "AutoHa-sample"
+    $RepositoryInstance = "SQLServer-0"
+    $RepositoryDatabase = "SolidQ_ServiceBroker"
+    $SamplingTime = 3
+    $TraceFilename = "F:\Data\Magna"  # Full path C:\data\trace.trc
+    $TraceInputFile = "sql\Magna_BrokerTrace.sql"
+    
+    $Global:debug = $false
+    #endregion
 
 #region Counters
 Set-ExecutionPolicy Unrestricted -Force

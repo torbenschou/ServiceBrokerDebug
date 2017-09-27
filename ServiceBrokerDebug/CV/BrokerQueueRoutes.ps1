@@ -43,24 +43,6 @@ Function EventLogExists
     New-EventLog -LogName "Application" -Source "Queue Problem"
   }
 }
-
-
-Function sleep-until($future_time) 
-{ 
-    if ([String]$future_time -as [DateTime]) { 
-        if ($(get-date $future_time) -gt $(get-date)) { 
-            $sec = [system.math]::ceiling($($(get-date $future_time) - $(get-date)).totalseconds) 
-            start-sleep -seconds $sec 
-        } 
-        else { 
-            write-host "You must specify a date/time in the future" 
-            return 
-        } 
-    } 
-    else { 
-        write-host "Incorrect date/time format" 
-    } 
-}
 #endregion base function
 
 #region GetBrokerQueueData
@@ -161,7 +143,7 @@ while ($true)
   WriteBrokerQueueData $RepositoryInstance $RepositoryDatabase $data
 
   
-  sleep-until -s $Global:SamplingTime
+  Start-Sleep -s $Global:SamplingTime
 
 } 
 

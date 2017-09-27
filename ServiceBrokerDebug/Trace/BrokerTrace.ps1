@@ -2,7 +2,7 @@
 (  
   [string] $SourceInstance
   , [int] $SamplingTime      # In minutes 
-  , [string] $TraceFilename  # Full path C:\data\trace.trc
+  , [string] $TraceFilename  # Full path C:\data\trace
   , [string] $TraceInputFile
 )
 
@@ -37,8 +37,8 @@ Function StartTrace ([string] $Instance, [int] $time, [string] $Filename, [strin
   $dbParam1 = "FileName=" + $FileName
   $dbParam2 = "TraceTime=" + $Time
   $dbParam = $dbParam1, $dbParam2
-  
-  Invoke-Sqlcmd -ServerInstance $Instance -InputFile $InputFile -Variable $dbParam
+
+  Invoke-Sqlcmd -ServerInstance $Instance -InputFile $InputFile -Variable $dbParam -Verbose
 }
 
 StartTrace $SourceInstance $SamplingTime $TraceFilename $TraceInputFile
